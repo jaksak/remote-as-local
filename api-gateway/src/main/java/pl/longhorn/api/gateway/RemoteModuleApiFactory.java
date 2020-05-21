@@ -1,10 +1,11 @@
-package pl.longhorn.cglibtests;
+package pl.longhorn.api.gateway;
 
 import kong.unirest.HttpRequest;
 import kong.unirest.Unirest;
 import lombok.val;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
+import pl.longhorn.api.ModuleApi;
 
 public class RemoteModuleApiFactory {
 

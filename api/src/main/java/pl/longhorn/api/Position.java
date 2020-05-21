@@ -1,4 +1,4 @@
-package pl.longhorn.cglibtests.map;
+package pl.longhorn.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

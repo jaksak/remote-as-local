@@ -1,9 +1,12 @@
-package pl.longhorn.cglibtests;
+package pl.longhorn.api.gateway;
 
-import org.springframework.web.bind.annotation.*;
-import pl.longhorn.cglibtests.map.MapModuleApi;
-import pl.longhorn.cglibtests.map.Position;
-import pl.longhorn.cglibtests.user.UserModuleApi;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import pl.longhorn.api.MapModuleApi;
+import pl.longhorn.api.Position;
+import pl.longhorn.api.UserModuleApi;
 
 import java.util.UUID;
 
@@ -15,12 +18,12 @@ public class ApigatewayController {
     private MapModuleApi mapModuleApi = remoteModuleApiFactory.get(MapModuleApi.class);
 
     @GetMapping("user")
-    public String getUserInfo(){
+    public String getUserInfo() {
         return "hello " + userModuleApi.getNick(getIdFromSession()) + " " + userModuleApi.getLvl(getIdFromSession());
     }
 
     @PostMapping("position")
-    public boolean movePlayer(@RequestBody Position position){
+    public boolean movePlayer(@RequestBody Position position) {
         return mapModuleApi.hasCollision(position);
     }
 

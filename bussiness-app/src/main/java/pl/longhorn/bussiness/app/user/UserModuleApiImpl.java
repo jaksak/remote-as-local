@@ -1,12 +1,13 @@
-package pl.longhorn.cglibtests.user;
+package pl.longhorn.bussiness.app.user;
 
 import org.springframework.stereotype.Service;
+import pl.longhorn.api.UserModuleApi;
 
 import java.util.Random;
 import java.util.UUID;
 
 @Service
-public class UserModuleApiImpl implements UserModuleApi{
+public class UserModuleApiImpl implements UserModuleApi {
 
     private Random random = new Random();
 

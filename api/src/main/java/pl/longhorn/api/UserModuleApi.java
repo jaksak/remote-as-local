@@ -1,6 +1,4 @@
-package pl.longhorn.cglibtests.user;
-
-import pl.longhorn.cglibtests.ModuleApi;
+package pl.longhorn.api;
 
 public interface UserModuleApi extends ModuleApi {
     Integer getLvl(String id);

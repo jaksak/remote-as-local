@@ -1,6 +1,8 @@
-package pl.longhorn.cglibtests.map;
+package pl.longhorn.bussiness.app.map;
 
 import org.springframework.stereotype.Service;
+import pl.longhorn.api.MapModuleApi;
+import pl.longhorn.api.Position;
 
 import java.util.Random;
 

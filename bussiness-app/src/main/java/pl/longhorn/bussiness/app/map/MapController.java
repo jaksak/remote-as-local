@@ -1,9 +1,11 @@
-package pl.longhorn.cglibtests.map;
+package pl.longhorn.bussiness.app.map;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import pl.longhorn.api.MapModuleApi;
+import pl.longhorn.api.Position;
 
 @RestController
 @RequiredArgsConstructor
