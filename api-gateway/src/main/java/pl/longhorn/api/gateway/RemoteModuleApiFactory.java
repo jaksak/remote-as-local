@@ -13,7 +13,7 @@ public class RemoteModuleApiFactory {
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(apiClass);
         enhancer.setCallback((MethodInterceptor) (obj, method, args, proxy) -> {
-            HttpRequest requestBodyEntity = null;
+            HttpRequest requestBodyEntity;
             if (args != null && args.length == 1) {
                 val body = args[0];
                 requestBodyEntity = Unirest.post("http://127.0.0.1:2677/" + method.getName())
