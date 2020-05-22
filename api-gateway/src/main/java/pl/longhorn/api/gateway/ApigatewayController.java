@@ -1,18 +1,19 @@
 package pl.longhorn.api.gateway;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import pl.longhorn.api.MapModuleApi;
 import pl.longhorn.api.Position;
-import pl.longhorn.api.RemoteModuleApiFactory;
 import pl.longhorn.api.UserModuleApi;
 
 import java.util.UUID;
 
 @RestController("apig")
+@RequiredArgsConstructor
 public class ApigatewayController {
 
-    private UserModuleApi userModuleApi = RemoteModuleApiFactory.get(UserModuleApi.class);
-    private MapModuleApi mapModuleApi = RemoteModuleApiFactory.get(MapModuleApi.class);
+    private final UserModuleApi userModuleApi;
+    private final MapModuleApi mapModuleApi;
 
     @GetMapping("user")
     public String getUserInfo() {
