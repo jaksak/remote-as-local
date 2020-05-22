@@ -35,4 +35,9 @@ public class UserModuleApiImpl implements UserModuleApi {
     public boolean isNull(Object object) {
         return object == null;
     }
+
+    @Override
+    public void inform(String message) {
+        System.out.println(message);
+    }
 }

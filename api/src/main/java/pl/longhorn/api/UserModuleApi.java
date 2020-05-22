@@ -10,4 +10,6 @@ public interface UserModuleApi extends ModuleApi {
     String changeImg(String url);
 
     boolean isNull(Object object);
+
+    void inform(String message);
 }

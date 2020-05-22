@@ -34,6 +34,11 @@ public class ApigatewayController {
         return userModuleApi.changeImg();
     }
 
+    @PostMapping("message")
+    public void addMessage(@RequestBody String message) {
+        userModuleApi.inform(message);
+    }
+
     private String getIdFromSession() {
         return UUID.randomUUID().toString();
     }

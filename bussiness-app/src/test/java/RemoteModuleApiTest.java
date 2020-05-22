@@ -51,9 +51,14 @@ class RemoteModuleApiTest {
 
         Assertions.assertEquals("RANDOM.png", result);
     }
-// TODO
-//    @Test
-//    void shouldSendNullValues(){
-//        Assertions.assertTrue(userModuleApi.isNull(null));
-//    }
+
+    @Test
+    void shouldSendNullValues() {
+        Assertions.assertTrue(userModuleApi.isNull(null));
+    }
+
+    @Test
+    void shouldSendVoidMethod() {
+        userModuleApi.inform("TEST_MESSAGE");
+    }
 }
