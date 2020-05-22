@@ -20,4 +20,14 @@ public class UserModuleApiImpl implements UserModuleApi {
     public String getNick(String id) {
         return UUID.randomUUID().toString();
     }
+
+    @Override
+    public String changeImg() {
+        return changeImg("RANDOM");
+    }
+
+    @Override
+    public String changeImg(String url) {
+        return url + ".png";
+    }
 }

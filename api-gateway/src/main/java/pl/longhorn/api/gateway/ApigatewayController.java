@@ -1,11 +1,9 @@
 package pl.longhorn.api.gateway;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.longhorn.api.MapModuleApi;
 import pl.longhorn.api.Position;
+import pl.longhorn.api.RemoteModuleApiFactory;
 import pl.longhorn.api.UserModuleApi;
 
 import java.util.UUID;
@@ -13,9 +11,8 @@ import java.util.UUID;
 @RestController("apig")
 public class ApigatewayController {
 
-    private RemoteModuleApiFactory remoteModuleApiFactory = new RemoteModuleApiFactory();
-    private UserModuleApi userModuleApi = remoteModuleApiFactory.get(UserModuleApi.class);
-    private MapModuleApi mapModuleApi = remoteModuleApiFactory.get(MapModuleApi.class);
+    private UserModuleApi userModuleApi = RemoteModuleApiFactory.get(UserModuleApi.class);
+    private MapModuleApi mapModuleApi = RemoteModuleApiFactory.get(MapModuleApi.class);
 
     @GetMapping("user")
     public String getUserInfo() {
@@ -25,6 +22,16 @@ public class ApigatewayController {
     @PostMapping("position")
     public boolean movePlayer(@RequestBody Position position) {
         return mapModuleApi.hasCollision(position);
+    }
+
+    @PutMapping("img")
+    public String changeImg(@RequestBody String url) {
+        return userModuleApi.changeImg(url);
+    }
+
+    @PostMapping("img")
+    public String prepareImg() {
+        return userModuleApi.changeImg();
     }
 
     private String getIdFromSession() {
