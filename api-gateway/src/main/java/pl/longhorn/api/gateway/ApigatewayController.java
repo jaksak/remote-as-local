@@ -25,8 +25,8 @@ public class ApigatewayController {
     }
 
     @PutMapping("img")
-    public String changeImg(@RequestBody String url) {
-        return userModuleApi.changeImg(url);
+    public String changeImg(@RequestParam String imageName) {
+        return userModuleApi.changeImg(imageName);
     }
 
     @PostMapping("img")

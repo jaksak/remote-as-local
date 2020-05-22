@@ -39,7 +39,6 @@ public class RemoteController {
     }
 
     @PostMapping("/{apiName}/{serviceName}")
-    // TODO: mozliwa optymalizacja: parameters jako [value, className]
     public void runRemote(@PathVariable String apiName, @PathVariable String serviceName, @RequestBody(required = false) ObjectNode parameterDto, HttpServletResponse response) {
         String[] parameterClassNames = getParameterClassNames(parameterDto);
         MethodKey key = new MethodKey(apiName, serviceName, parameterClassNames);
