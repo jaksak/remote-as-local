@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
 import pl.longhorn.api.MapModuleApi;
 import pl.longhorn.api.Position;
 import pl.longhorn.api.RemoteModuleApiFactory;
@@ -10,8 +9,7 @@ import pl.longhorn.bussiness.app.BussinessApp;
 
 import java.util.UUID;
 
-@SpringBootTest
-@ContextConfiguration(classes = BussinessApp.class)
+@SpringBootTest(classes = BussinessApp.class, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 class RemoteModuleApiTest {
 
     private MapModuleApi mapModuleApi = RemoteModuleApiFactory.get(MapModuleApi.class);
