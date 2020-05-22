@@ -6,4 +6,5 @@ import lombok.Value;
 public class MethodKey {
     private String apiName;
     private String methodName;
+    private String[] classNames;
 }

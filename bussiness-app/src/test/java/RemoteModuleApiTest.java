@@ -14,8 +14,8 @@ import java.util.UUID;
 @ContextConfiguration(classes = BussinessApp.class)
 class RemoteModuleApiTest {
 
-    private UserModuleApi userModuleApi = RemoteModuleApiFactory.get(UserModuleApi.class);
     private MapModuleApi mapModuleApi = RemoteModuleApiFactory.get(MapModuleApi.class);
+    private UserModuleApi userModuleApi = RemoteModuleApiFactory.get(UserModuleApi.class);
 
     @Test
     void shouldSendObject() {
@@ -51,4 +51,9 @@ class RemoteModuleApiTest {
 
         Assertions.assertEquals("RANDOM.png", result);
     }
+// TODO
+//    @Test
+//    void shouldSendNullValues(){
+//        Assertions.assertTrue(userModuleApi.isNull(null));
+//    }
 }

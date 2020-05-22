@@ -30,4 +30,9 @@ public class UserModuleApiImpl implements UserModuleApi {
     public String changeImg(String url) {
         return url + ".png";
     }
+
+    @Override
+    public boolean isNull(Object object) {
+        return object == null;
+    }
 }

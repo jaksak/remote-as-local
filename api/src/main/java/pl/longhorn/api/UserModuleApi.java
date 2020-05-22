@@ -8,4 +8,6 @@ public interface UserModuleApi extends ModuleApi {
     String changeImg();
 
     String changeImg(String url);
+
+    boolean isNull(Object object);
 }
